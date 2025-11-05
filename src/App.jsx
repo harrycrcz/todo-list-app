@@ -4,6 +4,7 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [input, setInput] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);
+  const [filter, setFilter] = useState('all');
 
   const handleAddTask = () => {
     if (input.trim() === '') return; // No agregar tareas vacías
@@ -28,6 +29,12 @@ function App() {
   const deleteTask = (id) => {
     const newList = todoList.filter((task) => task.id !== id);
     setTodoList(newList);
+  }
+
+  const getFilteredTask = ()=> {
+    if (filter === 'all') {return todoList };
+    if (filter === 'active') {return todoList.filter((task) => task.completed===false)};
+    if (filter === 'completed') {return todoList.filter((task) => task.completed==!false)};  
   }
 
   useEffect(() => {
@@ -86,7 +93,7 @@ function App() {
               <p className="text-slate-500 text-lg">No tasks yet. Add one to get started! 🚀</p>
             </div>
           ) : (
-            todoList.map((task) => (
+            getFilteredTasks().map((task) => (
               <div
                 key={task.id}
                 className={`bg-slate-800/50 backdrop-blur-sm rounded-lg p-4 border transition-all duration-200 hover:shadow-lg group ${
