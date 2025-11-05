@@ -37,6 +37,11 @@ function App() {
     if (filter === 'completed') {return todoList.filter((task) => task.completed==!false)};  
   }
 
+  const clearCompleted = ()=> {
+    const filteredList = ()=> todoList.filter((task) => task.completed===false);
+    setTodoList(filteredList)
+  }
+
   useEffect(() => {
     const savedTasks = localStorage.getItem('allofthem');
     if (savedTasks) {
@@ -119,6 +124,18 @@ function App() {
             Completed
           </button>
         </div>
+        
+        {/* clear completed tasks button */}
+        {todoList.some(task => task.completed) && (
+          <div className="mt-4 text-center">
+            <button
+              onClick={clearCompleted}
+              className="bg-gradient-to-r from-red-900 to-red-800 hover:from-red-800 hover:to-red-700 text-white font-medium px-6 py-2 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-red-900/50 active:scale-95"
+            >
+            Clear Completed
+            </button>
+          </div>
+          )}
         {/* Tasks List */}
         <div className="space-y-3">
           {todoList.length === 0 ? (
