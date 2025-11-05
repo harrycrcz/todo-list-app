@@ -85,17 +85,40 @@ function App() {
             </button>
           </div>
         </div>
-        <div>
-        <button onClick={() => setFilter('all')}>
-          All
-        </button>
-        <button onClick={() => setFilter('active')}>
-          Active
-        </button>
-        <button onClick={() => setFilter('completed')}>
-          Completed
-        </button>
-      </div>
+        
+        {/* Filter Buttons */}
+        <div className="flex gap-2 mb-6 bg-slate-800/30 backdrop-blur-sm rounded-lg p-2 border border-slate-700/30">
+          <button
+            onClick={() => setFilter('all')}
+            className={`flex-1 py-2 px-4 rounded-md font-medium transition-all duration-200 ${
+              filter === 'all'
+                ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/30'
+                : 'text-slate-400 hover:text-white hover:bg-slate-700/50'
+            }`}
+          >
+            All
+          </button>
+          <button
+            onClick={() => setFilter('active')}
+            className={`flex-1 py-2 px-4 rounded-md font-medium transition-all duration-200 ${
+              filter === 'active'
+                ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/30'
+                : 'text-slate-400 hover:text-white hover:bg-slate-700/50'
+            }`}
+          >
+            Active
+          </button>
+          <button
+            onClick={() => setFilter('completed')}
+            className={`flex-1 py-2 px-4 rounded-md font-medium transition-all duration-200 ${
+              filter === 'completed'
+                ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/30'
+                : 'text-slate-400 hover:text-white hover:bg-slate-700/50'
+            }`}
+          >
+            Completed
+          </button>
+        </div>
         {/* Tasks List */}
         <div className="space-y-3">
           {todoList.length === 0 ? (
