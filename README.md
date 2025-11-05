@@ -55,6 +55,7 @@ npm run dev
 ## 📸 Screenshots
 
 ![App Screenshot](public/screenshot.png)
+![App Screenshot](public/screenshot2.png)
 
 ## 🌐 Live Demo
 
