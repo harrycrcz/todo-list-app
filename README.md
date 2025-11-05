@@ -54,11 +54,11 @@ npm run dev
 
 ## 📸 Screenshots
 
-_(Add screenshots here after deployment)_
+![App Screenshot](public/screenshot.png)
 
 ## 🌐 Live Demo
 
-[View Live Demo](https://your-deployment-url.vercel.app) _(Coming soon)_
+(Coming soon)
 
 ## 📝 License
 
@@ -68,9 +68,7 @@ This project is licensed under the MIT License.
 
 **Renato (Harry)**
 
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
--
-
----
+- GitHub: [@harrycrcz]-([https://github.com/harrycrcz/])
+- ***
 
 ⭐ If you found this project helpful, please give it a star!
