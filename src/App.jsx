@@ -31,7 +31,7 @@ function App() {
     setTodoList(newList);
   }
 
-  const getFilteredTask = ()=> {
+  const getFilteredTasks = ()=> {
     if (filter === 'all') {return todoList };
     if (filter === 'active') {return todoList.filter((task) => task.completed===false)};
     if (filter === 'completed') {return todoList.filter((task) => task.completed==!false)};  
@@ -85,7 +85,17 @@ function App() {
             </button>
           </div>
         </div>
-
+        <div>
+        <button onClick={() => setFilter('all')}>
+          All
+        </button>
+        <button onClick={() => setFilter('active')}>
+          Active
+        </button>
+        <button onClick={() => setFilter('completed')}>
+          Completed
+        </button>
+      </div>
         {/* Tasks List */}
         <div className="space-y-3">
           {todoList.length === 0 ? (
